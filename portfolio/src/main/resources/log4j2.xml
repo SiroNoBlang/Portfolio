@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Log4j2 설정의 최상위 요소입니다. status="WARN" 은 Log4j2 자체의 문제를 경고 (WARN) 로 표시하겠다는 의미입니다. 
+	 이 값은 로그 출력과 관련된 문제가 발생할 때 표시됩니다. -->
+<Configuration status="WARN">
+	<!-- 
+		로그 메시지가 출력될 대상을 정의하는 섹션입니다. 여기에서는 Console Appender 를 설정하여 로그가 콘솔에 출력되도록 지정하였습니다.
+
+		1. <Console name="Console" target="SYSTEM_OUT">: 이름이 "Console" 인 콘솔 출력을 정의합니다.
+			target="SYSTEM_OUT" 은 로그 메시지를 시스템 콘솔 출력으로 설정하는 옵션입니다.
+		2. <PatternLayout>: 로그 메시지의 출력 형식을 정의하는 요소입니다.
+		3. %d{yyyy-MM-dd HH:mm:ss}: 로그 발생 시각을 " 년 - 월 - 일 시: 분: 초 " 형식으로 표시합니다.
+		4. %t: 로그를 기록한 스레드 이름을 표시합니다.
+		5. %-5level: 로그 레벨 (예: INFO, DEBUG, ERROR) 을 출력합니다. 5 자리를 맞추기 위해 왼쪽에 여백을 추가합니다.
+		6. %logger{36}: 로그를 발생시킨 클래스의 이름을 최대 36 자까지 표시합니다.
+		7. %msg%n: 로그 메시지를 출력하고 줄바꿈 (n) 을 추가합니다.
+	 -->
+    <Appenders>
+        <!-- 콘솔(Appender) 설정 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!-- 로그 메시지의 출력 형식을 정의 -->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    
+    <!-- 각각의 로거 (로그를 기록하는 대상) 를 정의하는 섹션입니다. -->
+    <Loggers>
+        <!-- 기본 로그 레벨 설정 -->
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

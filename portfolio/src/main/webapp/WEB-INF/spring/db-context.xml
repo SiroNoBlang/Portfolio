@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <!-- xmlns:tx="http://www.springframework.org/schema/tx"를 추가하여 트랜잭션을 활성화할 수 있도록 설정
+		 xsi:schemaLocation에 Spring 트랜잭션 관련 XSD(spring-tx.xsd) 추가
+	 -->
+	
+    <!-- HikariCP DataSource 설정 -->
+    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+        <property name="driverClassName" value="org.mariadb.jdbc.Driver" />
+        <property name="jdbcUrl" value="jdbc:mariadb://127.0.0.1:3306/portfolio" />
+        <property name="username" value="portfolio" />
+        <property name="password" value="1234" />
+        <!-- 
+        	MariaDB 드라이버: org.mariadb.jdbc.Driver
+			JDBC URL: jdbc:mariadb://127.0.0.1:3306/portfolio (localhost에 있는 portfolio 데이터베이스 - portfolio와 같은 명이 필수로 입력)
+			사용자 이름 및 비밀번호: portfolio / 1234
+         -->
+
+        <!-- HikariCP 고급 설정 (예: 최대 풀 크기, 커넥션 타임아웃 등) -->
+        <property name="maximumPoolSize" value="10"/>			<!-- 최대 커넥션 개수 -->
+        <property name="minimumIdle" value="5"/>				<!-- 최소한으로 유지할 커넥션 개수 -->
+        <property name="idleTimeout" value="30000"/>			<!-- 비활성 커넥션을 유지하는 최대 시간(ms) -->
+        <property name="connectionTimeout" value="30000"/>		<!-- 커넥션을 얻기 위해 기다리는 최대 시간(ms) -->
+        <property name="maxLifetime" value="1800000"/>			<!-- 커넥션의 최대 수명(ms) -->
+        <!-- 
+        	com.zaxxer.hikari.HikariDataSource 클래스를 사용하여 고성능 커넥션 풀을 적용함.
+			기존의 DriverManagerDataSource보다 성능이 뛰어나고 효율적인 커넥션 관리 가능.
+         -->
+        
+    </bean>
+
+    <!-- JdbcTemplate -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!-- 
+    	JdbcTemplate은 SQL 실행을 쉽게 할 수 있도록 도와주는 Spring의 JDBC API입니다.
+		dataSource를 참조하여 데이터베이스와 연결된 상태에서 SQL을 실행 가능.
+		DAO 클래스에서 SQL 실행을 간단하게 처리할 수 있도록 지원.
+     -->
+
+    <!-- TransactionManager -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!-- 
+    	DataSourceTransactionManager는 JDBC 기반 트랜잭션 관리 기능을 제공하는 Spring의 기본 트랜잭션 매니저.
+		트랜잭션 처리를 위해 dataSource를 사용하여 DB와 연결.
+     -->
+
+    <!-- Enable transaction management -->
+    <tx:annotation-driven />
+    <!-- 
+    	<tx:annotation-driven />을 설정하면 Spring이 @Transactional 애노테이션을 인식하여 트랜잭션을 자동으로 관리합니다.
+		@Transactional이 적용된 메서드는 트랜잭션이 시작되고, 정상적으로 실행되면 커밋, 예외가 발생하면 롤백됩니다.
+     -->
+</beans>
