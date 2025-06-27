@@ -33,8 +33,8 @@
 			<!-- Me -->
 			<article id="home" class="panel intro">
 				<header>
-					<h1>Lee Hyo Min</h1>
-					<p>JAVA Backend Developer</p>
+					<h1>이효민</h1>
+					<p>자바 백엔드 개발자</p>
 				</header>
 				<a href="#work" class="jumplink pic">
 					<span class="arrow icon solid fa-chevron-right">
@@ -55,65 +55,91 @@
 				<section>
 					<div class="row">
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit">
+							<a href="#" class="image fit image-overlay">
 								<img src="/resources/img/pic01.jpg" alt="">
+								<span class="overlay-text">
+									<time datetime="2022-08-08">2022-08-08</time> ~ <time datetime="2022-09-30">2022-09-30</time>
+								</span>
 							</a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit">
+							<a href="#" class="image fit image-overlay">
 								<img src="/resources/img/pic02.jpg" alt="">
+								<span class="overlay-text">
+									<time datetime="2022-10-08">2023.10.08</time> ~ <time datetime="2022-12-20">2022.12.20</time>
+								</span>
 							</a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit">
+							<a href="#" class="image fit image-overlay">
 								<img src="/resources/img/pic03.jpg" alt="">
+								<span class="overlay-text">
+									<time datetime="2022-12-21">2022.12.21</time> ~ <time datetime="2023-01-09">2023.01.09</time>
+								</span>
 							</a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit">
+							<a href="#" class="image fit image-overlay">
 								<img src="/resources/img/pic04.jpg" alt="">
+								<span class="overlay-text">
+									<time datetime="2023-02-13">2023.02.13</time> ~ <time datetime="2024-08-13">2024.08.13</time>
+								</span>
 							</a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit">
+							<a href="#" class="image fit image-overlay">
 								<img src="/resources/img/pic05.jpg" alt="">
+								<span class="overlay-text">
+									<time datetime="2023-02-13">2023.02.13</time> ~ <time datetime="2024-08-13">2024.08.13</time>
+								</span>
 							</a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit">
+							<a href="#" class="image fit image-overlay">
 								<img src="/resources/img/pic06.jpg" alt="">
+								<span class="overlay-text">
+									<time datetime="2023-02-13">2023.02.13</time> ~ <time datetime="2024-08-13">2024.08.13</time>
+								</span>
 							</a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit">
+							<a href="#" class="image fit image-overlay">
 								<img src="/resources/img/pic07.jpg" alt="">
+								<span class="overlay-text">
+									<time datetime="2023-02-13">2023.02.13</time> ~ <time datetime="2024-08-13">2024.08.13</time>
+								</span>
 							</a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit">
+							<a href="#" class="image fit image-overlay">
 								<img src="/resources/img/pic08.jpg" alt="">
+								<span class="overlay-text">
+									<time datetime="2024-10-13">2024.10.13</time> ~ <time datetime="2024-12-31">2024.12.31</time>
+								</span>
 							</a>
 						</div>
+						<!-- 
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit">
+							<a href="#" class="image fit image-overlay">
 								<img src="/resources/img/pic09.jpg" alt="">
 							</a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit">
+							<a href="#" class="image fit image-overlay">
 								<img src="/resources/img/pic10.jpg" alt="">
 							</a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit">
+							<a href="#" class="image fit image-overlay">
 								<img src="/resources/img/pic11.jpg" alt="">
 							</a>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit">
+							<a href="#" class="image fit image-overlay">
 								<img src="/resources/img/pic12.jpg" alt="">
 							</a>
 						</div>
+						 -->
 					</div>
 				</section>
 			</article>
